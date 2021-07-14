@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BA7E032269EC36B0007E4DA /* BMCustomPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA7E031269EC36B0007E4DA /* BMCustomPlayer.swift */; };
+		8BA7E034269EC8C40007E4DA /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA7E033269EC8C40007E4DA /* BottomSheet.swift */; };
 		A3CC6B4E7797FE8746991313 /* Pods_playerSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4BED2D035425BDA2909620 /* Pods_playerSample.framework */; };
 		DD8CE967269EAC3800FEA2E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8CE966269EAC3800FEA2E2 /* AppDelegate.swift */; };
 		DD8CE969269EAC3800FEA2E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8CE968269EAC3800FEA2E2 /* SceneDelegate.swift */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		4A7A61042983791713A4C345 /* Pods-playerSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playerSample.debug.xcconfig"; path = "Target Support Files/Pods-playerSample/Pods-playerSample.debug.xcconfig"; sourceTree = "<group>"; };
 		735F313C90A39AD2BF48BE42 /* Pods-playerSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playerSample.release.xcconfig"; path = "Target Support Files/Pods-playerSample/Pods-playerSample.release.xcconfig"; sourceTree = "<group>"; };
+		8BA7E031269EC36B0007E4DA /* BMCustomPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMCustomPlayer.swift; sourceTree = "<group>"; };
+		8BA7E033269EC8C40007E4DA /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		DD8CE963269EAC3800FEA2E2 /* playerSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = playerSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD8CE966269EAC3800FEA2E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD8CE968269EAC3800FEA2E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,9 +90,11 @@
 			children = (
 				DD8CE966269EAC3800FEA2E2 /* AppDelegate.swift */,
 				DD8CE968269EAC3800FEA2E2 /* SceneDelegate.swift */,
+				8BA7E033269EC8C40007E4DA /* BottomSheet.swift */,
 				DD8CE96A269EAC3800FEA2E2 /* ViewController.swift */,
 				DD8CE97A269EB25100FEA2E2 /* VideoSampleController.swift */,
 				DD8CE97C269EBC3500FEA2E2 /* PlayerCustomControlView.swift */,
+				8BA7E031269EC36B0007E4DA /* BMCustomPlayer.swift */,
 				DD8CE96C269EAC3800FEA2E2 /* Main.storyboard */,
 				DD8CE96F269EAC3900FEA2E2 /* Assets.xcassets */,
 				DD8CE971269EAC3900FEA2E2 /* LaunchScreen.storyboard */,
@@ -211,7 +217,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA7E032269EC36B0007E4DA /* BMCustomPlayer.swift in Sources */,
 				DD8CE96B269EAC3800FEA2E2 /* ViewController.swift in Sources */,
+				8BA7E034269EC8C40007E4DA /* BottomSheet.swift in Sources */,
 				DD8CE967269EAC3800FEA2E2 /* AppDelegate.swift in Sources */,
 				DD8CE969269EAC3800FEA2E2 /* SceneDelegate.swift in Sources */,
 				DD8CE97D269EBC3500FEA2E2 /* PlayerCustomControlView.swift in Sources */,

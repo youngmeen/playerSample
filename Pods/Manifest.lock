@@ -6,6 +6,35 @@ PODS:
     - BMPlayer/Core
     - NVActivityIndicatorView (~> 4.7.0)
     - SnapKit (~> 5.0.0)
+  - MaterialComponents/Availability (124.2.0)
+  - MaterialComponents/BottomSheet (124.2.0):
+    - MaterialComponents/Elevation
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/ShapeLibrary
+    - MaterialComponents/Shapes
+  - MaterialComponents/Elevation (124.2.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/private/Application (124.2.0)
+  - MaterialComponents/private/Color (124.2.0):
+    - MaterialComponents/Availability
+  - MaterialComponents/private/KeyboardWatcher (124.2.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Math (124.2.0)
+  - MaterialComponents/ShadowElevations (124.2.0)
+  - MaterialComponents/ShadowLayer (124.2.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/ShapeLibrary (124.2.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/Shapes
+  - MaterialComponents/Shapes (124.2.0):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
   - NVActivityIndicatorView (4.7.0):
     - NVActivityIndicatorView/Presenter (= 4.7.0)
   - NVActivityIndicatorView/Presenter (4.7.0)
@@ -13,18 +42,21 @@ PODS:
 
 DEPENDENCIES:
   - BMPlayer (~> 1.3.0)
+  - MaterialComponents/BottomSheet
 
 SPEC REPOS:
   trunk:
     - BMPlayer
+    - MaterialComponents
     - NVActivityIndicatorView
     - SnapKit
 
 SPEC CHECKSUMS:
   BMPlayer: e4b241bd088644d7b89d991a1a65d1b1615d19b3
+  MaterialComponents: 1a9b2d9d45b1601ae544de85089adc4c464306d4
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 41243a9af44e143b1b8fe28b54fe5309d825fe23
+PODFILE CHECKSUM: b47e4b6c4c9a028391b5dd83a65c0b37b0d00a36
 
 COCOAPODS: 1.10.1

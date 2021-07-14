@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Bold.otf">
+            <string>NotoSansKR-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -16,9 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vc4-Y2-H1H">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vc4-Y2-H1H">
                                 <rect key="frame" x="166" y="433" width="82" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="플레이어 이동">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
@@ -29,14 +33,19 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vc4-Y2-H1H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="64K-dM-Ygn"/>
+                            <constraint firstItem="Vc4-Y2-H1H" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Y8v-3r-lC3"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5kN-EK-hTQ"/>
                     <connections>
-                        <segue destination="yhD-oc-p0D" kind="show" identifier="gotoSample" id="qOc-gQ-lgc"/>
+                        <segue destination="yhD-oc-p0D" kind="show" identifier="gotoSample" id="VZv-rU-zlN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="69"/>
+            <point key="canvasLocation" x="93" y="68"/>
         </scene>
         <!--Video Sample Controller-->
         <scene sceneID="ceS-TT-jhK">
@@ -46,23 +55,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ezt-Kk-NPi">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="308"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ezt-Kk-NPi" customClass="BMCustomPlayer" customModule="playerSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="360"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="360" id="tBn-Kx-z5u"/>
+                                </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1a-gW-i28">
+                                <rect key="frame" x="136" y="586" width="143" height="30"/>
+                                <state key="normal" title="CustomBottomSheet"/>
+                                <connections>
+                                    <action selector="showBottomSheet:" destination="yhD-oc-p0D" eventType="touchUpInside" id="1dZ-k7-LDO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Pub-fy-45h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ezt-Kk-NPi" firstAttribute="leading" secondItem="Pub-fy-45h" secondAttribute="leading" id="V96-6S-6Xg"/>
+                            <constraint firstItem="e1a-gW-i28" firstAttribute="leading" secondItem="Pub-fy-45h" secondAttribute="leading" constant="136" id="gPo-2j-tE0"/>
+                            <constraint firstItem="Ezt-Kk-NPi" firstAttribute="trailing" secondItem="Pub-fy-45h" secondAttribute="trailing" id="ovp-Uo-1ld"/>
+                            <constraint firstItem="Ezt-Kk-NPi" firstAttribute="top" secondItem="Pub-fy-45h" secondAttribute="top" id="q3k-qy-dzD"/>
+                            <constraint firstItem="e1a-gW-i28" firstAttribute="centerX" secondItem="Ezt-Kk-NPi" secondAttribute="centerX" id="rAs-eQ-hOk"/>
+                            <constraint firstItem="Pub-fy-45h" firstAttribute="bottom" secondItem="e1a-gW-i28" secondAttribute="bottom" constant="192" id="uWq-4y-etI"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qUz-DW-eqg"/>
                     <connections>
-                        <outlet property="playerView" destination="Ezt-Kk-NPi" id="l98-U3-tfd"/>
+                        <outlet property="player" destination="Ezt-Kk-NPi" id="FW9-yk-MSz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSr-hO-TaG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="802.89855072463774" y="68.973214285714278"/>
+            <point key="canvasLocation" x="1000" y="68"/>
+        </scene>
+        <!--Bottom Sheet-->
+        <scene sceneID="mDJ-Ve-GJa">
+            <objects>
+                <viewController storyboardIdentifier="BottomSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UHe-5D-QBb" customClass="BottomSheet" customModule="playerSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8mp-vN-n3r">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom 영역" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xv0-rK-jbI">
+                                <rect key="frame" x="120" y="44" width="174" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="wv3-yi-4n0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STq-Vv-lEd">
+                                <rect key="frame" x="0.0" y="96" width="414" height="220"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="OcW-aa-OgY"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kNE-7f-By4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xv0-rK-jbI" firstAttribute="top" secondItem="kNE-7f-By4" secondAttribute="top" id="Fof-Pj-Maz"/>
+                            <constraint firstItem="kNE-7f-By4" firstAttribute="trailing" secondItem="xv0-rK-jbI" secondAttribute="trailing" constant="120" id="YIN-f7-app"/>
+                            <constraint firstItem="STq-Vv-lEd" firstAttribute="trailing" secondItem="kNE-7f-By4" secondAttribute="trailing" id="YMT-za-9H7"/>
+                            <constraint firstItem="STq-Vv-lEd" firstAttribute="leading" secondItem="kNE-7f-By4" secondAttribute="leading" id="rz1-qW-TQ2"/>
+                            <constraint firstItem="xv0-rK-jbI" firstAttribute="leading" secondItem="kNE-7f-By4" secondAttribute="leading" constant="120" id="s6U-BD-P2y"/>
+                            <constraint firstItem="STq-Vv-lEd" firstAttribute="top" secondItem="xv0-rK-jbI" secondAttribute="bottom" constant="8" symbolic="YES" id="uFH-D0-vIV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="STq-Vv-lEd" id="JZH-OQ-U6V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y7T-cb-C6J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1876.8115942028987" y="67.633928571428569"/>
         </scene>
     </scenes>
     <resources>

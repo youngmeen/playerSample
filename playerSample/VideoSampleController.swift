@@ -10,45 +10,31 @@ import UIKit
 import BMPlayer
 import AVFoundation
 import NVActivityIndicatorView
+import MaterialComponents.MaterialBottomSheet
 
 class VideoSampleController: UIViewController {
     
-    @IBOutlet weak var playerView: UIView!
-    var player : BMPlayer!
-    var asset : BMPlayerResource!
-    var url : URL!
-    var controller : BMPlayerControlView!
-    
+    @IBOutlet weak var player: BMCustomPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        releasePlayerManager()
-        setUpPlayerManager()
+        
+        player.backBlock = { [unowned self] (isFullScreen) in
+            if isFullScreen == true {
+                return
+            }
+            let _ = self.dismiss(animated: true, completion: nil)            
+        }
+        
+        let assets =
+            BMPlayerResource(url: URL(string:"https://www.w3schools.com/html/mov_bbb.mp4")!, name: "", cover: nil)
+        player.setVideo(resource: assets)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        player.autoPlay()
-    }
-    
-    func releasePlayerManager() -> Void{
-        BMPlayerConf.allowLog = false
-        BMPlayerConf.shouldAutoPlay = true
+    @IBAction func showBottomSheet(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "BottomSheet") as! BottomSheet
+        let bottomSheet: MDCBottomSheetController = MDCBottomSheetController(contentViewController: vc)
+        bottomSheet.preferredContentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height / 2)
+        present(bottomSheet, animated: true, completion: nil)
         
-    }
-    
-    func setUpPlayerManager() {
-        url = URL(string: "https://www.w3schools.com/html/mov_bbs.mp4")
-        self.controller = BMPlayerControlView()
-        
-        self.player = BMPlayer(customControlView: controller)
-        
-        self.playerView.addSubview(player)
-        
-        asset = BMPlayerResource(url: url)
-            //player.seek(30)
-        self.player.setVideo(resource: asset)
-
-        self.player.play()
     }
 }
