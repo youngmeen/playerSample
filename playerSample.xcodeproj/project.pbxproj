@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		DD8CE96E269EAC3800FEA2E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8CE96C269EAC3800FEA2E2 /* Main.storyboard */; };
 		DD8CE970269EAC3900FEA2E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD8CE96F269EAC3900FEA2E2 /* Assets.xcassets */; };
 		DD8CE973269EAC3900FEA2E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8CE971269EAC3900FEA2E2 /* LaunchScreen.storyboard */; };
+		DD8CE97B269EB25100FEA2E2 /* VideoSampleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8CE97A269EB25100FEA2E2 /* VideoSampleController.swift */; };
+		DD8CE97D269EBC3500FEA2E2 /* PlayerCustomControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8CE97C269EBC3500FEA2E2 /* PlayerCustomControlView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		DD8CE96F269EAC3900FEA2E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD8CE972269EAC3900FEA2E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD8CE974269EAC3900FEA2E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD8CE97A269EB25100FEA2E2 /* VideoSampleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSampleController.swift; sourceTree = "<group>"; };
+		DD8CE97C269EBC3500FEA2E2 /* PlayerCustomControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCustomControlView.swift; sourceTree = "<group>"; };
 		EA4BED2D035425BDA2909620 /* Pods_playerSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_playerSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -48,7 +52,6 @@
 				4A7A61042983791713A4C345 /* Pods-playerSample.debug.xcconfig */,
 				735F313C90A39AD2BF48BE42 /* Pods-playerSample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -84,6 +87,8 @@
 				DD8CE966269EAC3800FEA2E2 /* AppDelegate.swift */,
 				DD8CE968269EAC3800FEA2E2 /* SceneDelegate.swift */,
 				DD8CE96A269EAC3800FEA2E2 /* ViewController.swift */,
+				DD8CE97A269EB25100FEA2E2 /* VideoSampleController.swift */,
+				DD8CE97C269EBC3500FEA2E2 /* PlayerCustomControlView.swift */,
 				DD8CE96C269EAC3800FEA2E2 /* Main.storyboard */,
 				DD8CE96F269EAC3900FEA2E2 /* Assets.xcassets */,
 				DD8CE971269EAC3900FEA2E2 /* LaunchScreen.storyboard */,
@@ -103,6 +108,7 @@
 				DD8CE95F269EAC3800FEA2E2 /* Sources */,
 				DD8CE960269EAC3800FEA2E2 /* Frameworks */,
 				DD8CE961269EAC3800FEA2E2 /* Resources */,
+				30507EA3A05187FF6AD05E66 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,6 +165,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		30507EA3A05187FF6AD05E66 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-playerSample/Pods-playerSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-playerSample/Pods-playerSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-playerSample/Pods-playerSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5FD96ECCC470385296E48E73 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -191,6 +214,8 @@
 				DD8CE96B269EAC3800FEA2E2 /* ViewController.swift in Sources */,
 				DD8CE967269EAC3800FEA2E2 /* AppDelegate.swift in Sources */,
 				DD8CE969269EAC3800FEA2E2 /* SceneDelegate.swift in Sources */,
+				DD8CE97D269EBC3500FEA2E2 /* PlayerCustomControlView.swift in Sources */,
+				DD8CE97B269EB25100FEA2E2 /* VideoSampleController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
